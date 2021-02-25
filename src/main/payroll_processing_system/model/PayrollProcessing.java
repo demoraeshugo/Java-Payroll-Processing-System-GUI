@@ -435,7 +435,7 @@ public class PayrollProcessing {
      * handles run file command, reads input from src/main.payroll_processing_system/testCases.txt
      */
     private void handleRunFile() {
-        File file = new File("src/main.payroll_processing_system/testCases.txt");
+        File file = new File("src/main/payroll_processing_system/model/testCases.txt");
 
         try (Scanner sc = new Scanner(file, StandardCharsets.UTF_8.name())) {
             do {
