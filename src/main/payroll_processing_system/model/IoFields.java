@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 /**
  * IoFields class contains String messages that are used to display info about user commands

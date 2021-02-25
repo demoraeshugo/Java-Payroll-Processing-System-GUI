@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 /**
  * Defines the profile of an employee with a name, department, and dateHired. A profile is unique to each employee

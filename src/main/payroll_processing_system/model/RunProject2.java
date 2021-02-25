@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 /**
  * RunProject2 class is a simple driver class to display the functionality of Project 2

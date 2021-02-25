@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 import java.io.File;
 import java.io.IOException;
@@ -432,10 +432,10 @@ public class PayrollProcessing {
     }
 
     /**
-     * handles run file command, reads input from src/payroll_processing_system/testCases.txt
+     * handles run file command, reads input from src/main.payroll_processing_system/testCases.txt
      */
     private void handleRunFile() {
-        File file = new File("src/payroll_processing_system/testCases.txt");
+        File file = new File("src/main.payroll_processing_system/testCases.txt");
 
         try (Scanner sc = new Scanner(file, StandardCharsets.UTF_8.name())) {
             do {

@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 /**
  * Management class is a child class of Fulltime and represents a Management Employee with additional instance variables

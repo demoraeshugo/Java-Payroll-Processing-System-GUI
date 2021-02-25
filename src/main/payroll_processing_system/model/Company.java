@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 /**
  * Company class is a container class that is designed to hold Employee objects and any subclasses of Employee.

@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 /**
  *   Parttime is a child class of Employee, and represents a Part-time employee with additional instance variables

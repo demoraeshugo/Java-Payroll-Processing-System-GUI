@@ -1,4 +1,4 @@
-package payroll_processing_system;
+package payroll_processing_system.model;
 
 /**
  * Fulltime Class is a child class of Employee, and represents a Full-time employee with additional instance variable
