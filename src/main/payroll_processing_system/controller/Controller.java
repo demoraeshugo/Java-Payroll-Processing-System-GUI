@@ -1,19 +1,13 @@
-package payroll_processing_system.model;
+package payroll_processing_system.controller;
+
+import payroll_processing_system.model.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-/**
- *  PayrollProcessing class provides the interface for communicating with a Company object and handles input and output
- *  by processing commands from the console.This includes dealing with additions/removal to a Company, processing payments,
- *  printing earnings statements, etc.
- *
- *
- *  @author Hugo De Moraes, Jonathan Dong
- */
-public class PayrollProcessing {
+public class Controller {
     private Company company;
     private String userInput;
     private String[] tokens;
@@ -21,7 +15,7 @@ public class PayrollProcessing {
     /**
      * default constructor for PayrollProcessing
      */
-    public PayrollProcessing() {
+    public Controller() {
         company = new Company();
     }
 
@@ -434,7 +428,7 @@ public class PayrollProcessing {
     /**
      * handles run file command, reads input from src/main.payroll_processing_system/testCases.txt
      */
-    private void handleRunFile() {
+    public void handleRunFile() {
         File file = new File("src/main/payroll_processing_system/model/testCases.txt");
 
         try (Scanner sc = new Scanner(file, StandardCharsets.UTF_8.name())) {
@@ -449,23 +443,5 @@ public class PayrollProcessing {
         catch (IOException e) {
             System.out.println(IoFields.FILE_ERROR);
         }
-    }
-
-    /**
-     * Readies the payroll processor for user input from command line
-     */
-    public void run(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println(IoFields.START_PROMPT);
-
-        do {
-            tokens = tokenize(scan.nextLine());         //tokenize each line of user input
-            userInput = tokens[0];                      //sets userInput to command (A, I, O, R , etc)
-            if (!userInput.equals(Commands.QUIT)) {
-                handleUserInput();
-            }
-        } while (!userInput.equals(Commands.QUIT));
-
-        System.out.println(IoFields.END_PROMPT);         //when finished with kiosk, end prompt is printed
     }
 }

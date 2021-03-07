@@ -20,7 +20,7 @@ public class Employee {
      * @param department department of Employee
      * @param dateHired hire date of Employee
      */
-    Employee( String name, String department, Date dateHired ) {
+    public Employee( String name, String department, Date dateHired ) {
         profile = new Profile(name, department, dateHired);
     }
 

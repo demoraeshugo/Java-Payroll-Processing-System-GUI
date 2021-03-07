@@ -21,7 +21,7 @@ public class Management extends Fulltime {
      * @param salary salary of Management employee
      * @param mgmtCode roleCode of Management employee, 1 for Manager, 2 for Department Head and 3 for Director
      */
-    Management(String name, String department, Date dateHired, double salary, int mgmtCode) {
+    public Management(String name, String department, Date dateHired, double salary, int mgmtCode) {
         super(name, department, dateHired, salary);
         roleName = ROLES[mgmtCode-1];
         additionalComp = ROLE_BONUSES[mgmtCode-1] / super.getNumPayPeriod();

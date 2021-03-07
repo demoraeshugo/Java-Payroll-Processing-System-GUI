@@ -17,7 +17,7 @@ public class Fulltime extends Employee {
      * @param dateHired date of hire of Fulltime Employee
      * @param salary salary of Fulltime Employee
      */
-    Fulltime(String name, String department, Date dateHired, double salary) {
+    public Fulltime(String name, String department, Date dateHired, double salary) {
         super(name, department, dateHired);
         this.salary = salary;
     }

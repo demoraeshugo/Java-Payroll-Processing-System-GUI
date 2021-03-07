@@ -19,7 +19,7 @@ public class Parttime extends Employee {
      * @param dateHired date of Hire of Parttime Employee
      * @param hourlyRate hourly pay rate of Parttime Employee
      */
-    Parttime(String name, String department, Date dateHired, double hourlyRate) {
+    public Parttime(String name, String department, Date dateHired, double hourlyRate) {
         super(name, department, dateHired);
         this.hourlyRate = hourlyRate;
         final double OVERTIME_MULTIPLE = 1.5;

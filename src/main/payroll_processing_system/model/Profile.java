@@ -16,7 +16,7 @@ public class Profile {
      * @param department department of employee
      * @param dateHired date of hire of employee
      */
-    Profile(String name, String department, Date dateHired) {
+    public Profile(String name, String department, Date dateHired) {
         this.name = name;
         this.department = department;
         this.dateHired = dateHired;

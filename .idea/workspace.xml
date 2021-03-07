@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="added /resources">
+    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="Rebuilt with new directory">
+      <change afterPath="$PROJECT_DIR$/src/main/application/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/application/Sample.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/application/SampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Payroll-Processing-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Payroll-Processing-System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Fulltime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Fulltime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Management.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Management.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Parttime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Parttime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/PayrollProcessing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/RunProject2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Fulltime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Fulltime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Management.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Management.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/PayrollProcessing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/RunProject2.java" beforeDir="false" />
     </list>
     <list id="35bf2160-7b41-40d2-87a9-a361fac2210f" name="Changes by jonad" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,9 +33,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -69,10 +89,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -97,21 +117,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunProject2">
-    <configuration name="RunProject2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.model.RunProject2" />
+  <component name="RunManager" selected="Application.RunProject3">
+    <configuration name="RunProject3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.model.Main" />
       <module name="Java-Payroll-Processing-System" />
+      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../../../../dev/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="RunSample" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="application.Main" />
+      <module name="Java-Payroll-Processing-System" />
+      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../../../../dev/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,7 +155,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.RunProject2" />
+      <item itemvalue="Application.RunSample" />
+      <item itemvalue="Application.RunProject3" />
       <item itemvalue="JUnit.CompanyTest" />
       <item itemvalue="JUnit.ManagementTest" />
     </list>
@@ -166,7 +185,11 @@
       <workItem from="1614126375135" duration="34000" />
       <workItem from="1614150892709" duration="2040000" />
       <workItem from="1614281917389" duration="735000" />
-      <workItem from="1614282684135" duration="2874000" />
+      <workItem from="1614282684135" duration="3679000" />
+      <workItem from="1614567650206" duration="1995000" />
+      <workItem from="1614706603356" duration="3581000" />
+      <workItem from="1614918249468" duration="1318000" />
+      <workItem from="1615063203266" duration="6551000" />
     </task>
     <task id="LOCAL-00001" summary="Added project framework">
       <created>1613420920316</created>
@@ -294,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614285004053</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Rebuilt with new directory">
+      <created>1614285759016</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1614285759016</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +361,8 @@
     <MESSAGE value="removed /javadoc&#10;added /docs" />
     <MESSAGE value="Created MVC framework" />
     <MESSAGE value="added /resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="added /resources" />
+    <MESSAGE value="Rebuilt with new directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebuilt with new directory" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
