@@ -1,5 +1,7 @@
 package payroll_processing_system.model;
 
+import payroll_processing_system.controller.Controller;
+
 /**
  * Company class is a container class that is designed to hold Employee objects and any subclasses of Employee.
  * Company also provides a variety of methods to make changes to its bag of Employees such as adding, removing
@@ -187,61 +189,67 @@ public class Company {
     /**
      * prints earnings statements only for employees in CS Department
      */
-    private void printCSDepartment(){
+    private String printCSDepartment(){
+        String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[0])) {
-                System.out.println(employee.toString());
+                output += employee.toString();
             }
         }
+        return output;
     }
 
     /**
      * prints earnings statements only for employees in ECE Department
      */
-    private void printECEDepartment(){
+    private String printECEDepartment(){
+        String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[1])) {
-                System.out.println(employee);
+                output += employee.toString();
             }
         }
+        return output;
     }
 
     /**
      * prints earnings statements only for employees in IT Department
      */
-    private void printITDepartment(){
+    private String printITDepartment(){
+        String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[2])) {
-                System.out.println(employee);
+                output += employee.toString();
             }
         }
+        return output;
     }
 
     /**
      * print earning statements for all employees
      */
-    public void print() {
+    public String print() {
+        String output = "";
         for (Employee employee : empList) {
             if (employee != null) {
-                System.out.println(employee);
+                output += employee.toString();
             }
         }
+        return output;
     }
 
     /**
      * prints earnings statements for all employees in order of hire date
      */
-    public void printByDate() {
+    public String printByDate() {
         sortByDate();
-        print();
+        return print();
     }
 
     /**
      * prints earning statements for all employees by order of department
      */
-    public void printByDepartment() {
-        printCSDepartment();
-        printECEDepartment();
-        printITDepartment();
+    public String printByDepartment() {
+        return printCSDepartment() + printECEDepartment() + printITDepartment();
     }
 }

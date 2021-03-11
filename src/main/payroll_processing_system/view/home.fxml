@@ -35,7 +35,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -51,7 +50,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payroll_processing_system.controller.Controller">
    <top>
@@ -76,10 +74,15 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="796.0" spacing="10.0">
+            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="796.0" spacing="10.0">
                <children>
-                  <ChoiceBox onMouseClicked="#Controller" prefWidth="150.0" />
-                  <Button mnemonicParsing="false" text="Calculate Payment" />
+                  <Button mnemonicParsing="false" onAction="#onAddClick" text="Add" />
+                  <Button mnemonicParsing="false" onAction="#onRemoveClick" text="Remove" />
+                  <Button mnemonicParsing="false" onAction="#onSetHoursClick" text="Set Hours" />
+                  <Button mnemonicParsing="false" onAction="#onCalculatePaymentClick" text="Calculate Payment" />
+                  <Button mnemonicParsing="false" onAction="#handlePrintAll" text="Print All" />
+                  <Button mnemonicParsing="false" onAction="#handlePrintByHireDate" text="Print By Hire Date" />
+                  <Button mnemonicParsing="false" onAction="#handlePrintByDepartment" text="Print By Department" />
                </children>
                <VBox.margin>
                   <Insets bottom="4.0" right="4.0" top="4.0" />
@@ -105,6 +108,9 @@
       </HBox>
    </bottom>
    <center>
+      <TextArea fx:id="textArea" prefHeight="412.0" prefWidth="333.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
       <HBox prefHeight="412.0" prefWidth="470.0" style="-fx-background-color: rgb(233, 233, 233)rgb(233, 233, 233);" BorderPane.alignment="CENTER">
          <children>
             <GridPane prefHeight="312.0" prefWidth="349.0">
@@ -125,19 +131,19 @@
                   <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Group GridPane.rowIndex="5">
+                  <Group fx:id="em_type" GridPane.rowIndex="5">
                      <children>
-                        <RadioButton mnemonicParsing="false" text="Parttime">
+                        <RadioButton fx:id="parttime" mnemonicParsing="false" onAction="#onRadioButtonClick" text="Parttime">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton layoutX="112.0" mnemonicParsing="false" text="Fulltime">
+                        <RadioButton fx:id="fulltime" layoutX="112.0" mnemonicParsing="false" onAction="#onRadioButtonClick" text="Fulltime">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton layoutX="227.0" mnemonicParsing="false" text="Management">
+                        <RadioButton fx:id="management" layoutX="227.0" mnemonicParsing="false" onAction="#onRadioButtonClick" text="Management">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
@@ -151,26 +157,38 @@
                   </Label>
                   <Group translateX="4.0">
                      <children>
-                        <TextField layoutX="111.0" />
+                        <TextField fx:id="firstName" layoutX="111.0" />
                         <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" textOrigin="TOP" />
                      </children>
                   </Group>
                   <Group translateX="4.0" GridPane.rowIndex="1">
                      <children>
                         <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" textOrigin="TOP" />
-                        <TextField layoutX="111.0" />
-                     </children>
-                  </Group>
-                  <Group translateX="4.0" GridPane.rowIndex="2">
-                     <children>
-                        <ChoiceBox layoutX="115.0" prefWidth="150.0" />
-                        <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department Code" textOrigin="TOP" />
+                        <TextField fx:id="lastName" layoutX="111.0" />
                      </children>
                   </Group>
                   <Group translateX="4.0" GridPane.rowIndex="3">
                      <children>
-                        <DatePicker layoutX="115.0" />
+                        <DatePicker fx:id="hireDate" layoutX="115.0" />
                         <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hire Date" textOrigin="TOP" />
+                     </children>
+                  </Group>
+                  <Group fx:id="amount_group" layoutX="10.0" layoutY="15.0" translateX="4.0" GridPane.rowIndex="6">
+                     <children>
+                        <TextField fx:id="propertyOne" layoutX="111.0" />
+                        <Text fx:id="propertyOneLabel" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" textOrigin="TOP" />
+                     </children>
+                  </Group>
+                  <Group translateX="4.0" GridPane.rowIndex="2">
+                     <children>
+                        <TextField fx:id="departmentCode" layoutX="115.0" prefHeight="27.0" prefWidth="163.0" />
+                        <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department Code" textOrigin="TOP" />
+                     </children>
+                  </Group>
+                  <Group translateX="4.0" GridPane.rowIndex="7">
+                     <children>
+                        <Text fx:id="propertyTwoLabel" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manager Code" textOrigin="TOP" />
+                        <TextField fx:id="propertyTwo" layoutX="115.0" />
                      </children>
                   </Group>
                </children>
@@ -180,8 +198,5 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
       </HBox>
-   </center>
-   <right>
-      <TextArea prefHeight="412.0" prefWidth="333.0" BorderPane.alignment="CENTER" />
    </right>
 </BorderPane>

@@ -29,9 +29,7 @@ public class Main extends Application {
              window.show();
         }
         catch (IOException e) {
-            System.out.println(IoFields.FILE_ERROR);
+            System.out.println(e);
         }
-
-
     }
 }

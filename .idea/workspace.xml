@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="Rebuilt with new directory">
-      <change afterPath="$PROJECT_DIR$/src/main/application/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/application/Sample.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/application/SampleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" afterDir="false" />
+    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="WIP">
+      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/database.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Fulltime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Fulltime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Management.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Management.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Parttime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Parttime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/PayrollProcessing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/RunProject2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Fulltime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Fulltime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Management.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Management.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/PayrollProcessing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/RunProject2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/IoFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/IoFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" afterDir="false" />
     </list>
     <list id="35bf2160-7b41-40d2-87a9-a361fac2210f" name="Changes by jonad" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +41,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1oX6NTZrNzxAYEwDwYMb2hHC431" />
   <component name="ProjectLevelVcsManager">
@@ -100,8 +89,8 @@
       <recent name="C:\Users\jonad\Documents\ghubstuff\cs213Proj2\Java-Payroll-Processing-System\src\p2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/src/main/payroll_processing_system/model" />
+      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/main" />
       <recent name="$PROJECT_DIR$/src/main" />
@@ -130,6 +119,17 @@
       <option name="MAIN_CLASS_NAME" value="application.Main" />
       <module name="Java-Payroll-Processing-System" />
       <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../../../../dev/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,6 +190,8 @@
       <workItem from="1614706603356" duration="3581000" />
       <workItem from="1614918249468" duration="1318000" />
       <workItem from="1615063203266" duration="6551000" />
+      <workItem from="1615147525534" duration="4033000" />
+      <workItem from="1615325448500" duration="21614000" />
     </task>
     <task id="LOCAL-00001" summary="Added project framework">
       <created>1613420920316</created>
@@ -324,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614285759016</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="WIP">
+      <created>1615147630008</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1615147630009</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +371,8 @@
     <MESSAGE value="Created MVC framework" />
     <MESSAGE value="added /resources" />
     <MESSAGE value="Rebuilt with new directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rebuilt with new directory" />
+    <MESSAGE value="WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
