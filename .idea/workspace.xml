@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="WIP">
-      <change afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/database.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/IoFields.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/IoFields.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/IoFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/IoFields.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" afterDir="false" />
     </list>
     <list id="35bf2160-7b41-40d2-87a9-a361fac2210f" name="Changes by jonad" comment="" />
@@ -41,9 +42,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1oX6NTZrNzxAYEwDwYMb2hHC431" />
   <component name="ProjectLevelVcsManager">
@@ -191,7 +189,7 @@
       <workItem from="1614918249468" duration="1318000" />
       <workItem from="1615063203266" duration="6551000" />
       <workItem from="1615147525534" duration="4033000" />
-      <workItem from="1615325448500" duration="21614000" />
+      <workItem from="1615325448500" duration="24476000" />
     </task>
     <task id="LOCAL-00001" summary="Added project framework">
       <created>1613420920316</created>
@@ -333,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615147630009</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Debugging">
+      <created>1615440572997</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1615440572998</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +377,8 @@
     <MESSAGE value="added /resources" />
     <MESSAGE value="Rebuilt with new directory" />
     <MESSAGE value="WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
+    <MESSAGE value="Debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
