@@ -1,4 +1,4 @@
-package payroll_processing_system.model;
+package payroll_processing_system.application;
 
 import java.text.DecimalFormat;
 

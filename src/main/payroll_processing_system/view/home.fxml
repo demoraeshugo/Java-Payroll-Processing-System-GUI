@@ -51,7 +51,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payroll_processing_system.controller.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payroll_processing_system.view.Controller">
    <top>
       <VBox prefHeight="52.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -78,7 +78,7 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#onAddClick" text="Add" />
                   <Button mnemonicParsing="false" onAction="#onRemoveClick" text="Remove" />
-                  <Button mnemonicParsing="false" onAction="#onSetHoursClick" text="Set Hours" />
+                  <Button fx:id="setHoursButton" mnemonicParsing="false" onAction="#onSetHoursClick" text="Set Hours" />
                   <Button mnemonicParsing="false" onAction="#onCalculatePaymentClick" text="Calculate Payment" />
                   <Button mnemonicParsing="false" onAction="#handlePrintAll" text="Print All" />
                   <Button mnemonicParsing="false" onAction="#handlePrintByHireDate" text="Print By Hire Date" />
@@ -88,7 +88,7 @@
                   <Insets bottom="4.0" right="4.0" top="4.0" />
                </VBox.margin>
                <padding>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets bottom="6.0" left="10.0" right="10.0" top="6.0" />
                </padding>
             </HBox>
          </children>
@@ -131,30 +131,25 @@
                   <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Group fx:id="em_type" GridPane.rowIndex="5">
+                  <Group fx:id="em_type" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
-                        <RadioButton fx:id="parttime" mnemonicParsing="false" onAction="#onRadioButtonClick" text="Parttime">
+                        <RadioButton fx:id="parttime" mnemonicParsing="false" onAction="#handleEmployeeType" text="Parttime">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="fulltime" layoutX="112.0" mnemonicParsing="false" onAction="#onRadioButtonClick" text="Fulltime">
+                        <RadioButton fx:id="fulltime" layoutX="112.0" mnemonicParsing="false" onAction="#handleEmployeeType" text="Fulltime">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="management" layoutX="227.0" mnemonicParsing="false" onAction="#onRadioButtonClick" text="Management">
+                        <RadioButton fx:id="management" layoutX="227.0" mnemonicParsing="false" onAction="#handleEmployeeType" text="Management">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
                         </RadioButton>
                      </children>
                   </Group>
-                  <Label text="Select Employee Type" GridPane.columnSpan="2" GridPane.rowIndex="4">
-                     <padding>
-                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                     </padding>
-                  </Label>
                   <Group translateX="4.0">
                      <children>
                         <TextField fx:id="firstName" layoutX="111.0" />
@@ -173,7 +168,7 @@
                         <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hire Date" textOrigin="TOP" />
                      </children>
                   </Group>
-                  <Group fx:id="amount_group" layoutX="10.0" layoutY="15.0" translateX="4.0" GridPane.rowIndex="6">
+                  <Group fx:id="propertyOneGroup" layoutX="10.0" layoutY="15.0" translateX="4.0" visible="false" GridPane.rowIndex="5">
                      <children>
                         <TextField fx:id="propertyOne" layoutX="111.0" />
                         <Text fx:id="propertyOneLabel" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" textOrigin="TOP" />
@@ -181,14 +176,52 @@
                   </Group>
                   <Group translateX="4.0" GridPane.rowIndex="2">
                      <children>
-                        <TextField fx:id="departmentCode" layoutX="115.0" prefHeight="27.0" prefWidth="163.0" />
                         <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department Code" textOrigin="TOP" />
                      </children>
                   </Group>
-                  <Group translateX="4.0" GridPane.rowIndex="7">
+                  <Group fx:id="propertyTwoGroup" translateX="4.0" GridPane.rowIndex="6">
                      <children>
-                        <Text fx:id="propertyTwoLabel" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manager Code" textOrigin="TOP" />
-                        <TextField fx:id="propertyTwo" layoutX="115.0" />
+                        <Text fx:id="propertyTwoLabel" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours Worked" textOrigin="TOP" visible="false" />
+                        <TextField fx:id="propertyTwoTextField" layoutX="115.0" visible="false" />
+                        <Group fx:id="propertyTwoRadioGroup" layoutX="115.0" layoutY="1.0" visible="false">
+                           <children>
+                              <RadioButton fx:id="manager" mnemonicParsing="false" onAction="#handleManagerCode" text="Manager">
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                              </RadioButton>
+                              <RadioButton fx:id="departmentHead" layoutX="112.0" mnemonicParsing="false" onAction="#handleManagerCode" text="Dept. Head">
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                              </RadioButton>
+                              <RadioButton fx:id="director" layoutX="227.0" mnemonicParsing="false" onAction="#handleManagerCode" text="Director">
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Type" translateX="4.0" GridPane.rowIndex="4" />
+                  <Group fx:id="em_type1" layoutX="125.0" layoutY="187.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <RadioButton fx:id="CS" mnemonicParsing="false" onAction="#handleDepartmentCode" text="CS">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="ECE" layoutX="112.0" mnemonicParsing="false" onAction="#handleDepartmentCode" text="ECE">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="IT" layoutX="227.0" mnemonicParsing="false" onAction="#handleDepartmentCode" text="IT">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </RadioButton>
                      </children>
                   </Group>
                </children>

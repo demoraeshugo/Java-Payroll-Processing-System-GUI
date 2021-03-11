@@ -1,4 +1,4 @@
-package payroll_processing_system.model;
+package payroll_processing_system.application;
 
 /**
  * Commands class contains info on each of the console commands available to the user.

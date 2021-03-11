@@ -1,6 +1,4 @@
-package payroll_processing_system.model;
-
-import payroll_processing_system.controller.Controller;
+package payroll_processing_system.application;
 
 /**
  * Company class is a container class that is designed to hold Employee objects and any subclasses of Employee.
@@ -193,7 +191,7 @@ public class Company {
         String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[0])) {
-                output += employee.toString();
+                output += employee.toString() + "\n";
             }
         }
         return output;
@@ -206,7 +204,7 @@ public class Company {
         String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[1])) {
-                output += employee.toString();
+                output += employee.toString() + "\n";
             }
         }
         return output;
@@ -219,7 +217,7 @@ public class Company {
         String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[2])) {
-                output += employee.toString();
+                output += employee.toString() + "\n";
             }
         }
         return output;
@@ -232,7 +230,7 @@ public class Company {
         String output = "";
         for (Employee employee : empList) {
             if (employee != null) {
-                output += employee.toString();
+                output += employee.toString() + "\n";
             }
         }
         return output;

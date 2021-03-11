@@ -1,4 +1,4 @@
-package payroll_processing_system.model;
+package payroll_processing_system.application;
 
 /**
  *   Parttime is a child class of Employee, and represents a Part-time employee with additional instance variables
@@ -32,7 +32,7 @@ public class Parttime extends Employee {
      * @param department department of Parttime Employee
      * @param dateHired date of Hire of Parttime Employee
      */
-    Parttime(String name, String department, Date dateHired, int hours) {
+    public Parttime(String name, String department, Date dateHired, int hours) {
         super(name, department, dateHired);
         this.hours = hours;
     }

@@ -1,13 +1,11 @@
-package payroll_processing_system.controller;
+package payroll_processing_system.view;
 
+import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
-import payroll_processing_system.model.*;
+import payroll_processing_system.application.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
@@ -20,11 +18,15 @@ public class Controller {
     private String userInput;
     private String[] tokens;
     private Node selectedEmployeeType;
+    private int selectedManagerCode;
     private DateTimeFormatter formatters;
     private final String SALARY_LABEL = "Yearly Salary";
     private final String HOURLY_RATE_LABEL = "Hourly Rate";
     private final String HOURS_WORKED_LABEL = "Hours Worked";
     private final String MANAGEMENT_CODE_LABEL = "Manager Code";
+
+    @FXML // fx:id="setHoursButton"
+    private Button setHoursButton; // Value injected by FXMLLoader
 
     @FXML // fx:id="textArea"
     private TextArea textArea; // Value injected by FXMLLoader
@@ -53,14 +55,41 @@ public class Controller {
     @FXML // fx:id="propertyOneLabel"
     private Text propertyOneLabel; // Value injected by FXMLLoader
 
-    @FXML // fx:id="departmentCode"
-    private TextField departmentCode; // Value injected by FXMLLoader
 
     @FXML // fx:id="propertyTwoLabel"
     private Text propertyTwoLabel; // Value injected by FXMLLoader
 
-    @FXML // fx:id="propertyTwo"
-    private TextField propertyTwo; // Value injected by FXMLLoader
+    @FXML // fx:id="CS"
+    private RadioButton CS; // Value injected by FXMLLoader
+
+    @FXML // fx:id="ECE"
+    private RadioButton ECE; // Value injected by FXMLLoader
+
+    @FXML // fx:id="IT"
+    private RadioButton IT; // Value injected by FXMLLoader
+
+    @FXML // fx:id="manager"
+    private RadioButton manager; // Value injected by FXMLLoader
+
+    @FXML // fx:id="departmentHead"
+    private RadioButton departmentHead; // Value injected by FXMLLoader
+
+    @FXML // fx:id="director"
+    private RadioButton director; // Value injected by FXMLLoader
+
+    @FXML // fx:id="propertyOneGroup"
+    private Group propertyOneGroup; // Value injected by FXMLLoader
+
+    @FXML // fx:id="propertyTwoGroup"
+    private Group propertyTwoGroup; // Value injected by FXMLLoader
+
+    @FXML // fx:id="propertyTwoTextField"
+    private TextField propertyTwoTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="propertyTwoRadioGroup"
+    private Group propertyTwoRadioGroup; // Value injected by FXMLLoader
+
+    private String selectedDepartmentCode;
 
     /**
      * default constructor for PayrollProcessing
@@ -89,7 +118,7 @@ public class Controller {
      */
     private boolean isValidDate(Date date) {
         if(!date.isValid()) {
-            textArea.appendText(String.format(IoFields.INVALID_DATE_LOG, date));
+            printToTextArea(String.format(IoFields.INVALID_DATE_LOG, date));
             return false;
         }
 
@@ -107,7 +136,7 @@ public class Controller {
                 return true;
             }
         }
-        textArea.appendText(String.format(IoFields.INVALID_DEPARTMENT_CODE_LOG, code));
+        printToTextArea(String.format(IoFields.INVALID_DEPARTMENT_CODE_LOG, code));
         return false;
     }
 
@@ -120,7 +149,7 @@ public class Controller {
         final int HOURLY_RATE_LOWER_BOUND = 0;
 
         if( rate < HOURLY_RATE_LOWER_BOUND ) {
-            textArea.appendText(IoFields.INVALID_PAY_RATE_LOG);
+            printToTextArea(IoFields.INVALID_PAY_RATE_LOG);
             return false;
         }
 
@@ -136,7 +165,7 @@ public class Controller {
         final int SALARY_LOWER_BOUND = 0;
 
         if( salary < SALARY_LOWER_BOUND ) {
-            textArea.appendText(IoFields.INVALID_SALARY_LOG);
+            printToTextArea(IoFields.INVALID_SALARY_LOG);
             return false;
         }
         return true;
@@ -154,7 +183,7 @@ public class Controller {
             }
         }
 
-        textArea.appendText(IoFields.INVALID_MANAGER_CODE_LOG);
+        printToTextArea(IoFields.INVALID_MANAGER_CODE_LOG);
         return false;
     }
 
@@ -166,12 +195,12 @@ public class Controller {
     private boolean isValidHours(int hours) {
 
         if(hours < Company.HOURS_LOWER_BOUND) {
-            textArea.appendText(IoFields.SET_NEGATIVE_HOURS_FAILURE_LOG);
+            printToTextArea(IoFields.SET_NEGATIVE_HOURS_FAILURE_LOG);
             return false;
         }
 
         if(hours > Company.HOURS_UPPER_BOUND) {
-            textArea.appendText(IoFields.SET_OVER_ONE_HUNDRED_HOURS_FAILURE_LOG);
+            printToTextArea(IoFields.SET_OVER_ONE_HUNDRED_HOURS_FAILURE_LOG);
             return false;
         }
 
@@ -206,11 +235,11 @@ public class Controller {
      */
     private void addEmployee(Employee employee) {
         if(!company.add(employee)) {
-            textArea.appendText(IoFields.EMPLOYEE_ADD_FAILURE_LOG);
+            printToTextArea(IoFields.EMPLOYEE_ADD_FAILURE_LOG);
             return;
         }
 
-        textArea.appendText(IoFields.EMPLOYEE_ADD_SUCCESS_LOG);
+        printToTextArea(IoFields.EMPLOYEE_ADD_SUCCESS_LOG);
     }
 
     /**
@@ -225,12 +254,12 @@ public class Controller {
 
         try {
             NAME = firstName.getText() + "," + lastName.getText();
-            DEPARTMENT = departmentCode.getText();
+            DEPARTMENT = selectedDepartmentCode;
             DATE_HIRED = new Date(hireDate.getValue().format(formatters));
             RATE = Double.parseDouble(propertyOne.getText());
         }
         catch(Exception e) {
-            textArea.appendText(IoFields.MISSING_PARAMS_LOG);
+            printToTextArea(IoFields.MISSING_PARAMS_LOG);
             return;
         }
 
@@ -259,12 +288,12 @@ public class Controller {
 
         try {
             NAME = firstName.getText() + "," + lastName.getText();
-            DEPARTMENT = departmentCode.getText();
+            DEPARTMENT = selectedDepartmentCode;
             DATE_HIRED = new Date(hireDate.getValue().format(formatters));
             SALARY = Double.parseDouble(propertyOne.getText());
         }
         catch(Exception e) {
-            textArea.appendText(IoFields.MISSING_PARAMS_LOG);
+            printToTextArea(IoFields.MISSING_PARAMS_LOG);
             return;
         }
 
@@ -294,13 +323,13 @@ public class Controller {
 
         try {
             NAME = firstName.getText() + "," + lastName.getText();
-            DEPARTMENT = departmentCode.getText();
+            DEPARTMENT = selectedDepartmentCode;
             DATE_HIRED = new Date(hireDate.getValue().format(formatters));
             SALARY = Double.parseDouble(propertyOne.getText());
-            MGMT_CODE = Integer.parseInt(propertyTwo.getText());
+            MGMT_CODE = selectedManagerCode;
         }
         catch(Exception e) {
-            textArea.appendText(IoFields.MISSING_PARAMS_LOG);
+            printToTextArea(IoFields.MISSING_PARAMS_LOG);
             return;
         }
 
@@ -324,12 +353,12 @@ public class Controller {
 
         try {
             NAME = firstName.getText() + "," + lastName.getText();
-            DEPARTMENT = departmentCode.getText();
+            DEPARTMENT = selectedDepartmentCode;
             DATE_HIRED = new Date(hireDate.getValue().format(formatters));
             targetEmployee = new Employee(NAME, DEPARTMENT, DATE_HIRED);
         }
         catch(Exception e) {
-            textArea.appendText(IoFields.MISSING_PARAMS_LOG);
+            printToTextArea(IoFields.MISSING_PARAMS_LOG);
             return;
         }
 
@@ -338,11 +367,11 @@ public class Controller {
         }
 
         if(!company.remove(targetEmployee)) {
-            System.out.println(IoFields.INVALID_EMPLOYEE_LOG);
+            printToTextArea(IoFields.INVALID_EMPLOYEE_LOG);
             return;
         }
 
-        textArea.appendText(IoFields.EMPLOYEE_REMOVE_SUCCESS_LOG);
+        printToTextArea(IoFields.EMPLOYEE_REMOVE_SUCCESS_LOG);
     }
 
     /**
@@ -354,7 +383,7 @@ public class Controller {
         }
 
         company.processPayments();
-        textArea.appendText(IoFields.PAYMENT_PROCESS_COMPLETE_LOG);
+        printToTextArea(IoFields.PAYMENT_PROCESS_COMPLETE_LOG);
     }
 
     /**
@@ -373,13 +402,13 @@ public class Controller {
 
         try {
             NAME = firstName.getText() + "," + lastName.getText();
-            DEPARTMENT = departmentCode.getText();
+            DEPARTMENT = selectedDepartmentCode;
             DATE_HIRED = new Date(hireDate.getValue().format(formatters));
-            HOURS = Integer.parseInt(propertyTwo.getText());
+            HOURS = Integer.valueOf(propertyTwoTextField.getText());
             targetEmployee = new Parttime(NAME, DEPARTMENT, DATE_HIRED, HOURS);
         }
         catch(Exception e) {
-            System.out.println(IoFields.MISSING_PARAMS_LOG);
+            printToTextArea(IoFields.MISSING_PARAMS_LOG);
             return;
         }
 
@@ -395,10 +424,11 @@ public class Controller {
 
         // try set
         if(!company.setHours(targetEmployee)) {
-            textArea.appendText(IoFields.INVALID_EMPLOYEE_LOG);
+            printToTextArea(IoFields.INVALID_EMPLOYEE_LOG);
+            return;
         }
 
-        textArea.appendText(IoFields.SET_HOURS_SUCCESS_LOG);
+        printToTextArea(IoFields.SET_HOURS_SUCCESS_LOG);
     }
 
     /**
@@ -409,8 +439,8 @@ public class Controller {
         if(DBIsEmpty()) {
             return;
         }
-        textArea.appendText(IoFields.PRINT_PROMPT);
-        textArea.appendText(company.print());
+        printToTextArea(IoFields.PRINT_PROMPT);
+        printToTextArea(company.print());
     }
 
     /**
@@ -421,8 +451,8 @@ public class Controller {
         if(DBIsEmpty()) {
             return;
         }
-        textArea.appendText(IoFields.PRINT_BY_DATE_PROMPT);
-        textArea.appendText(company.printByDate());
+        printToTextArea(IoFields.PRINT_BY_DATE_PROMPT);
+        printToTextArea(company.printByDate());
     }
 
     /**
@@ -433,8 +463,8 @@ public class Controller {
         if(DBIsEmpty()) {
             return;
         }
-        textArea.appendText(IoFields.PRINT_BY_DEPT_PROMPT);
-        textArea.appendText(company.printByDepartment());
+        printToTextArea(IoFields.PRINT_BY_DEPT_PROMPT);
+        printToTextArea(company.printByDepartment());
     }
 
     /**
@@ -443,7 +473,7 @@ public class Controller {
      */
     private boolean DBIsEmpty() {
         if(company.isEmpty()){
-            textArea.appendText(IoFields.EMPTY_DB_LOG);
+            printToTextArea(IoFields.EMPTY_DB_LOG);
             return true;
         }
         return false;
@@ -465,7 +495,7 @@ public class Controller {
             } while(!userInput.equals(Commands.QUIT) && sc.hasNextLine());
         }
         catch (IOException e) {
-            textArea.appendText(IoFields.FILE_ERROR);
+            printToTextArea(IoFields.FILE_ERROR);
         }
     }
 
@@ -502,53 +532,133 @@ public class Controller {
         button2.setDisable(!button2.isDisabled());
     }
 
+
     private void clearProperties() {
         propertyOne.setText("");
-        propertyTwo.setText("");
+        propertyTwoTextField.setText("");
     }
 
     private void setParttimeUI() {
+        // disable other radio buttons
         toggleRadioButtons(fulltime, management);
+
+        // clear forms
         clearProperties();
 
-        propertyTwo.setVisible(true);
-        propertyTwoLabel.setVisible(true);
-
+        // set labels
         propertyOneLabel.setText(HOURLY_RATE_LABEL);
         propertyTwoLabel.setText(HOURS_WORKED_LABEL);
+
+        // show propertyOne
+        propertyOneGroup.setVisible(true);
+
+        // hide propertyTwoRadioGroup
+        propertyTwoRadioGroup.setVisible(false);
+
+        // show propertyTwo
+        propertyTwoGroup.setVisible(true);
+
+        // show propertyTwoLabel
+        propertyTwoLabel.setVisible(true);
+
+        // show propertyTwoTextField
+        propertyTwoTextField.setVisible(true);
+
+        // enable setHours button
+        setHoursButton.setDisable(false);
     }
 
     private void setFulltimeUI() {
+        // disable other radio buttons
         toggleRadioButtons(parttime, management);
+
+        // disable setHours button
+        setHoursButton.setDisable(true);
+
+        // clear forms
         clearProperties();
 
-        propertyTwo.setVisible(false);
-        propertyTwoLabel.setVisible(false);
-
+        // set labels
         propertyOneLabel.setText(SALARY_LABEL);
 
-        propertyOne.setText("");
-        propertyTwo.setText("");
+        // show propertyOne
+        propertyOneGroup.setVisible(true);
+
+        // hide propertyTwo
+        propertyTwoGroup.setVisible(false);
     }
 
     private void setManagementUI() {
+        // disable other radio buttons
         toggleRadioButtons(parttime, fulltime);
+
+        // disable setHours button
+        setHoursButton.setDisable(true);
+
+        // clear forms
         clearProperties();
 
-        propertyTwo.setVisible(true);
-        propertyTwoLabel.setVisible(true);
+        // clear radio selections
+        manager.setSelected(false);
+        departmentHead.setSelected(false);
+        director.setSelected(false);
 
+        // set labels
         propertyOneLabel.setText(SALARY_LABEL);
         propertyTwoLabel.setText(MANAGEMENT_CODE_LABEL);
 
-        propertyOne.setText("");
-        propertyTwo.setText("");
+        // show propertyOne
+        propertyOneGroup.setVisible(true);
+
+        // hide propertyTwoTextArea
+        propertyTwoTextField.setVisible(false);
+
+        // show propertyTwoRadioGroup
+        propertyTwoRadioGroup.setVisible(true);
+
+        // show propertyTwoLabel
+        propertyTwoLabel.setVisible(true);
+
+        // show propertyTwo
+        propertyTwoGroup.setVisible(true);
     }
 
     @FXML
-    public void onRadioButtonClick(ActionEvent e) {
-        final Node source = (Node) e.getSource();
-        selectedEmployeeType = source;
+    public void handleDepartmentCode(ActionEvent e) {
+        Node selectedOption = (Node) e.getSource();
+
+        if(selectedOption == CS) {
+            toggleRadioButtons(ECE, IT);
+            selectedDepartmentCode = CS.getId();
+        } else if(selectedOption == ECE) {
+            toggleRadioButtons(CS, IT);
+            selectedDepartmentCode = ECE.getId();
+        } else if(selectedOption == IT) {
+            toggleRadioButtons(CS, ECE);
+            selectedDepartmentCode = IT.getId();
+        }
+    }
+
+    @FXML
+    public void handleManagerCode(ActionEvent e) {
+        Node selectedOption = (Node) e.getSource();
+
+        if(selectedOption == manager) {
+            toggleRadioButtons(departmentHead, director);
+            selectedManagerCode = 1;
+        } else if(selectedOption == departmentHead) {
+            toggleRadioButtons(manager, director);
+            selectedManagerCode = 2;
+        } else if(selectedOption == director) {
+            toggleRadioButtons(manager, departmentHead);
+            selectedManagerCode = 3;
+        }
+
+    }
+
+    @FXML
+    public void handleEmployeeType(ActionEvent e) {
+        selectedEmployeeType = (Node) e.getSource();
 
         if(selectedEmployeeType == parttime) {
             setParttimeUI();
@@ -559,5 +669,13 @@ public class Controller {
         else if(selectedEmployeeType == management) {
             setManagementUI();
         }
+    }
+
+    public void printToTextArea(String text) {
+        printNewLine(text);
+    }
+
+    public void printNewLine(String text) {
+        textArea.appendText(text + "\n");
     }
 }

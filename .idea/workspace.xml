@@ -3,13 +3,40 @@
   <component name="ChangeListManager">
     <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="WIP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/IoFields.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/IoFields.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/IoFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/IoFields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payroll_processing_system/CompanyTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payroll_processing_system/CompanyTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payroll_processing_system/ManagementTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payroll_processing_system/ManagementTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/main/payroll_processing_system/model/testCases.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Commands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Date.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Fulltime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/IoFields.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Management.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Parttime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/testCases.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Java-Payroll-Processing-System/payroll_processing_system/model/CompanyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Java-Payroll-Processing-System/payroll_processing_system/model/ManagementTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/application/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/application/Sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/application/SampleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Fulltime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Fulltime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/IoFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/IoFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Management.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Management.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Parttime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Parttime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/database.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/model/testCases.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/testCases.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/payroll_processing_system/model/CompanyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/payroll_processing_system/application/CompanyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/payroll_processing_system/model/ManagementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/payroll_processing_system/application/ManagementTest.java" afterDir="false" />
     </list>
     <list id="35bf2160-7b41-40d2-87a9-a361fac2210f" name="Changes by jonad" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +124,8 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="payroll_processing_system.view" />
+      <recent name="payroll_processing_system.application" />
       <recent name="payroll_processing_system.model" />
       <recent name="p2.main" />
     </key>
@@ -106,7 +135,7 @@
   </component>
   <component name="RunManager" selected="Application.RunProject3">
     <configuration name="RunProject3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.model.Main" />
+      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.application.Main" />
       <module name="Java-Payroll-Processing-System" />
       <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../../../../dev/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
@@ -121,21 +150,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="CompanyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Payroll-Processing-System" />
-      <option name="PACKAGE_NAME" value="payroll_processing_system.model" />
-      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.model.CompanyTest" />
+      <option name="PACKAGE_NAME" value="payroll_processing_system.application" />
+      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.application.CompanyTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
@@ -144,8 +175,8 @@
     </configuration>
     <configuration name="ManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Payroll-Processing-System" />
-      <option name="PACKAGE_NAME" value="payroll_processing_system.model" />
-      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.model.ManagementTest" />
+      <option name="PACKAGE_NAME" value="payroll_processing_system.application" />
+      <option name="MAIN_CLASS_NAME" value="payroll_processing_system.application.ManagementTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
@@ -189,7 +220,8 @@
       <workItem from="1614918249468" duration="1318000" />
       <workItem from="1615063203266" duration="6551000" />
       <workItem from="1615147525534" duration="4033000" />
-      <workItem from="1615325448500" duration="24476000" />
+      <workItem from="1615325448500" duration="25383000" />
+      <workItem from="1615487123691" duration="9102000" />
     </task>
     <task id="LOCAL-00001" summary="Added project framework">
       <created>1613420920316</created>
@@ -338,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615440572998</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="More Debugging">
+      <created>1615443795730</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1615443795730</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +417,8 @@
     <MESSAGE value="Rebuilt with new directory" />
     <MESSAGE value="WIP" />
     <MESSAGE value="Debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging" />
+    <MESSAGE value="More Debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="More Debugging" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
