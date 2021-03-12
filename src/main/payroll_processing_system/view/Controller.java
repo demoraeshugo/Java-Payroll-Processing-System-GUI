@@ -623,20 +623,29 @@ public class Controller {
         if (sourceFile == null){
             printToTextArea(IoFields.NULL_FILE_LOG);
             return;}
+        if (sourceFile.length() == 0){
+            printToTextArea(IoFields.INCORRECT_IMPORT_FORMAT);
+        }
         //write code to read from the file
         try (Scanner sc = new Scanner(sourceFile)) {
             do {
                 tokens = tokenize(sc.nextLine());
                 userInput = tokens[0];
-                if (userInput.equals("P")) {
-                    handleAddParttimeFile();
-                } else if (userInput.equals("F")) {
-                    handleAddFulltimeFile();
-                } else if (userInput.equals("M")) {
-                    handleAddManagerFile();
+                if (tokens != null) {
+                    if (userInput.equals("P")) {
+                        handleAddParttimeFile();
+                    } else if (userInput.equals("F")) {
+                        handleAddFulltimeFile();
+                    } else if (userInput.equals("M")) {
+                        handleAddManagerFile();
+                    } else {
+                        printToTextArea(IoFields.INCORRECT_IMPORT_FORMAT);
+                        return;
+                    }
                 }
                 else {
                     printToTextArea(IoFields.INCORRECT_IMPORT_FORMAT);
+                    return;
                 }
             } while (sc.hasNextLine());
 
