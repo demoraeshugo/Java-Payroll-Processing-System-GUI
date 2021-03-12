@@ -4,15 +4,16 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="WIP">
+    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="Clean up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/CompanyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/model/ManagementTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/application/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/application/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/application/IoFields.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/application/IoFields.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/view/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Payroll-Processing-System/payroll_processing_system/view/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Commands.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/application/IoFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/IoFields.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/payroll_processing_system/view/home.fxml" afterDir="false" />
     </list>
     <list id="35bf2160-7b41-40d2-87a9-a361fac2210f" name="Changes by jonad" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,19 +111,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.RunProject3">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RunProject3" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="payroll_processing_system.application.Main" />
       <module name="Java-Payroll-Processing-System" />
@@ -135,6 +123,19 @@
       <option name="MAIN_CLASS_NAME" value="application.Main" />
       <module name="Java-Payroll-Processing-System" />
       <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/dev/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -394,7 +395,8 @@
     <MESSAGE value="WIP" />
     <MESSAGE value="Debugging" />
     <MESSAGE value="More Debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="More Debugging" />
+    <MESSAGE value="Clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

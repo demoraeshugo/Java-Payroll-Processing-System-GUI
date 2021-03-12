@@ -1,17 +1,15 @@
 package payroll_processing_system.view;
 
+import payroll_processing_system.application.*;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import payroll_processing_system.application.*;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
-
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.format.DateTimeFormatter;
@@ -376,7 +374,7 @@ public class Controller {
      *   processes input when importing from file that tries to add Fulltime employee
      */
     private void handleAddFulltimeFile() {
-// get input fields
+        // get input fields
         final String NAME;
         final String DEPARTMENT;
         final Date DATE_HIRED;
@@ -501,7 +499,7 @@ public class Controller {
     /**
      * handles user input when calculating payment
      */
-    public void handleCalculatePayment() {
+    private void handleCalculatePayment() {
         if (DBIsEmpty()) {
             return;
         }
@@ -626,7 +624,7 @@ public class Controller {
             printToTextArea(IoFields.NULL_FILE_LOG);
             return;}
         //write code to read from the file
-        try (Scanner sc = new Scanner(sourceFile, StandardCharsets.UTF_8.name())) {
+        try (Scanner sc = new Scanner(sourceFile)) {
             do {
                 tokens = tokenize(sc.nextLine());
                 userInput = tokens[0];
@@ -649,30 +647,11 @@ public class Controller {
 
     }
 
-    /**
-     * handles run file command, reads input from src/main.payroll_processing_system/testCases.txt
-     */
-    public void handleRunFile() {
-        File file = new File("src/main/payroll_processing_system/model/testCases.txt");
-
-        try (Scanner sc = new Scanner(file, StandardCharsets.UTF_8.name())) {
-            do {
-                tokens = tokenize(sc.nextLine());
-                userInput = tokens[0];
-                if (!userInput.equals(Commands.QUIT)) {
-                    // handleUserInput();
-                }
-            } while (!userInput.equals(Commands.QUIT) && sc.hasNextLine());
-        } catch (IOException e) {
-            printToTextArea(IoFields.FILE_ERROR);
-        }
-    }
-
     @FXML
     /**
      * defines action when add employee button is clicked
      */
-    public void onAddClick() {
+    private void onAddClick() {
         if (selectedEmployeeType == parttime) {
             handleAddParttime();
         } else if (selectedEmployeeType == fulltime) {
@@ -688,7 +667,7 @@ public class Controller {
     /**
      * defines action when remove button is clicked
      */
-    public void onRemoveClick() {
+    private void onRemoveClick() {
         handleRemoveEmployee();
     }
 
@@ -696,7 +675,7 @@ public class Controller {
     /**
      * defines action when set hours button is clicked
      */
-    public void onSetHoursClick() {
+    private void onSetHoursClick() {
         handleSetHours();
     }
 
@@ -704,7 +683,7 @@ public class Controller {
     /**
      * defines action when calculate payment button is clicked
      */
-    public void onCalculatePaymentClick() {
+    private void onCalculatePaymentClick() {
         handleCalculatePayment();
     }
 
@@ -712,7 +691,7 @@ public class Controller {
     /**
      * defines action when export button is clicked
      */
-    public void exportClick() {
+    private void exportClick() {
         handleExport();
 
     }
@@ -721,17 +700,12 @@ public class Controller {
     /**
      * defines action when import button is clicked
      */
-    public void importClick() {
+    private void importClick() {
         handleImport();
     }
 
-//    private void toggleRadioButtons(RadioButton button1, RadioButton button2) {
-//        button1.setDisable(!button1.isDisabled());
-//        button2.setDisable(!button2.isDisabled());
-//    }
-
     /**
-     * clears forms for propertyone and propertyTwoTextField
+     * clears forms for propertyOne and propertyTwoTextField
      */
     private void clearProperties() {
         propertyOne.setText("");
@@ -742,9 +716,6 @@ public class Controller {
      * creates the UI and respective textfields when parttime is selected
      */
     private void setParttimeUI() {
-        // disable other radio buttons
-        // toggleRadioButtons(fulltime, management);
-
         // clear forms
         clearProperties();
 
@@ -775,9 +746,6 @@ public class Controller {
      * creates the UI and respective textfields when fulltime is selected
      */
     private void setFulltimeUI() {
-        // disable other radio buttons
-        //toggleRadioButtons(parttime, management);
-
         // disable setHours button
         setHoursButton.setDisable(true);
 
@@ -798,9 +766,6 @@ public class Controller {
      * creates the UI and respective textfields when management is selected
      */
     private void setManagementUI() {
-        // disable other radio buttons
-        //toggleRadioButtons(parttime, fulltime);
-
         // disable setHours button
         setHoursButton.setDisable(true);
 
@@ -836,7 +801,7 @@ public class Controller {
     /**
      * defines action when department code is selected
      */
-    public void handleDepartmentCode(ActionEvent e) {
+    private void handleDepartmentCode(ActionEvent e) {
         Node selectedOption = (Node) e.getSource();
 
         if (selectedOption == CS) {
@@ -855,30 +820,28 @@ public class Controller {
     /**
      * defines action when manager code is selected
      */
-    public void handleManagerCode(ActionEvent e) {
+    private void handleManagerCode(ActionEvent e) {
         Node selectedOption = (Node) e.getSource();
+        final int MANAGER_CODES[] = { 1, 2, 3 };
 
         if (selectedOption == manager) {
             // toggleRadioButtons(departmentHead, director);
-            selectedManagerCode = 1;
+            selectedManagerCode = MANAGER_CODES[0];
         } else if (selectedOption == departmentHead) {
             // toggleRadioButtons(manager, director);
-            selectedManagerCode = 2;
+            selectedManagerCode = MANAGER_CODES[1];
         } else if (selectedOption == director) {
             // toggleRadioButtons(manager, departmentHead);
-            selectedManagerCode = 3;
+            selectedManagerCode = MANAGER_CODES[2];
         }
-
     }
 
     @FXML
     /**
      * defines action when employee type is selected
      */
-    public void handleEmployeeType(ActionEvent e) {
+    private void handleEmployeeType(ActionEvent e) {
         selectedEmployeeType = (Node) e.getSource();
-
-
 
         if (selectedEmployeeType == parttime) {
             setParttimeUI();
@@ -893,7 +856,7 @@ public class Controller {
      * outputs text to textarea
      * @param text to be displayed on textarea
      */
-    public void printToTextArea(String text) {
+    private void printToTextArea(String text) {
         printNewLine(text);
     }
 
@@ -901,7 +864,7 @@ public class Controller {
      * outputs a text to textarea with newline
      * @param text to be displayed on textarea
      */
-    public void printNewLine(String text) {
+    private void printNewLine(String text) {
         textArea.appendText(text + "\n");
     }
 }

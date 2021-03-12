@@ -31,7 +31,8 @@ public final class IoFields {
     public static final String MISSING_PARAMS_LOG = "Error: missing parameters for this command";
     public static final String FILE_ERROR = "Error: testCases.txt not found!";
     public static final String NULL_FILE_LOG = "Please select a file to import/export";
-    public static final String EXPORT_SUCCESS_LOG = "Data has been succesfully exported";
+    public static final String EXPORT_SUCCESS_LOG = "Data has been successfully exported";
     public static final String NULL_NAME = "Please enter a name";
     public static final String INCORRECT_IMPORT_FORMAT = "Import file incorrectly formatted";
+    public static final String LOADING_ERROR = "An error occurred when setting up the stage";
 }

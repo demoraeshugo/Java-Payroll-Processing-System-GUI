@@ -30,7 +30,7 @@ public class Main extends Application {
              window.show();
         }
         catch (IOException e) {
-            System.out.println(e);
+            System.out.println(IoFields.LOADING_ERROR);
         }
     }
 }
