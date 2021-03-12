@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
@@ -25,8 +24,8 @@ public class Main extends Application {
         Parent root;
         try {
              root = FXMLLoader.load(getClass().getResource("../view/home.fxml"));
-             stage.setTitle("Payroll Processing");
-             stage.setScene(new Scene(root, 900, 600));
+             window.setTitle("Payroll Processing");
+             window.setScene(new Scene(root, 1300, 600));
              window.show();
         }
         catch (IOException e) {

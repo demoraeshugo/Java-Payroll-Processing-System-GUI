@@ -110,7 +110,7 @@
       </HBox>
    </bottom>
    <center>
-      <TextArea fx:id="textArea" prefHeight="412.0" prefWidth="333.0" BorderPane.alignment="CENTER" disable = "true"/>
+      <TextArea fx:id="textArea" editable="false" prefHeight="412.0" prefWidth="333.0" BorderPane.alignment="CENTER" />
    </center>
    <right>
       <HBox prefHeight="412.0" prefWidth="470.0" style="-fx-background-color: rgb(233, 233, 233)rgb(233, 233, 233);" BorderPane.alignment="CENTER">
@@ -194,13 +194,16 @@
                                  <padding>
                                     <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                                  </padding>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="managerGroup" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="departmentHead" layoutX="112.0" mnemonicParsing="false" onAction="#handleManagerCode" text="Dept. Head">
+                              <RadioButton fx:id="departmentHead" layoutX="112.0" mnemonicParsing="false" onAction="#handleManagerCode" text="Dept. Head" toggleGroup="$managerGroup">
                                  <padding>
                                     <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                                  </padding>
                               </RadioButton>
-                              <RadioButton fx:id="director" layoutX="227.0" mnemonicParsing="false" onAction="#handleManagerCode" text="Director">
+                              <RadioButton fx:id="director" layoutX="227.0" mnemonicParsing="false" onAction="#handleManagerCode" text="Director" toggleGroup="$managerGroup">
                                  <padding>
                                     <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                                  </padding>
