@@ -23,7 +23,7 @@ public class Controller {
     private final String SALARY_LABEL = "Yearly Salary";
     private final String HOURLY_RATE_LABEL = "Hourly Rate";
     private final String HOURS_WORKED_LABEL = "Hours Worked";
-    private final String MANAGEMENT_CODE_LABEL = "Manager Code";
+    private final String MANAGEMENT_CODE_LABEL = "Manager Role";
 
     @FXML // fx:id="setHoursButton"
     private Button setHoursButton; // Value injected by FXMLLoader
@@ -54,7 +54,6 @@ public class Controller {
 
     @FXML // fx:id="propertyOneLabel"
     private Text propertyOneLabel; // Value injected by FXMLLoader
-
 
     @FXML // fx:id="propertyTwoLabel"
     private Text propertyTwoLabel; // Value injected by FXMLLoader
