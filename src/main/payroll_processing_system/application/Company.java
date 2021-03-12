@@ -1,5 +1,12 @@
 package payroll_processing_system.application;
 
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  * Company class is a container class that is designed to hold Employee objects and any subclasses of Employee.
  * Company also provides a variety of methods to make changes to its bag of Employees such as adding, removing
@@ -13,8 +20,8 @@ public class Company {
     private final int SIZE_FACTOR = 4; // initialize here for use in constructor
     public static final int HOURS_LOWER_BOUND = 0;
     public static final int HOURS_UPPER_BOUND = 100;
-    public static final String[] DEPARTMENT_CODES = { "CS", "ECE", "IT" };
-    public static final int[] MANAGER_CODES = { 1, 2, 3 };
+    public static final String[] DEPARTMENT_CODES = {"CS", "ECE", "IT"};
+    public static final int[] MANAGER_CODES = {1, 2, 3};
 
     /**
      * default constructor to create an empty bag with numEmployee = 0
@@ -26,6 +33,7 @@ public class Company {
 
     /**
      * helper method to find an employee in the bag
+     *
      * @param employee Employee object to be found
      * @return index of Employee in empList, -1 if Employee is not found
      */
@@ -58,18 +66,19 @@ public class Company {
 
     /**
      * adds an Employee to the bag, grows bag if needed
+     *
      * @param employee Employee object to be added
      * @return true if Employee successfully added, false if employee is already in empList
      */
     public boolean add(Employee employee) {
         // check if employee already in database
-        if(find(employee) != -1) {
+        if (find(employee) != -1) {
             return false;
         }
 
         // grow data structure if needed
         if (numEmployee == empList.length - 1) {
-             grow();
+            grow();
         }
 
 
@@ -77,12 +86,13 @@ public class Company {
         numEmployee++;
 
         return true;
-     }
+    }
 
     //maintain the original sequence
 
     /**
      * removes an Employee if it exists
+     *
      * @param employee Employee object to be removed
      * @return true if employee is removed successfully, false if employee is not found
      */
@@ -112,6 +122,7 @@ public class Company {
 
     /**
      * sets working hours for a part-time employee
+     *
      * @param employee Employee to set hours
      * @return true if hours have successfully been set, false otherwise
      */
@@ -123,7 +134,7 @@ public class Company {
             return false;
         }
 
-        if(!(employee instanceof Parttime)) {
+        if (!(employee instanceof Parttime)) {
             return false;
         }
 
@@ -148,6 +159,7 @@ public class Company {
 
     /**
      * checks if number of employees in Company is 0
+     *
      * @return true if number of employees in company is 0, false otherwise
      */
     public boolean isEmpty() {
@@ -157,7 +169,7 @@ public class Company {
     /**
      * sorts employees by date of hire
      */
-    private void sortByDate(){
+    private void sortByDate() {
         int n = numEmployee;
         final int EQUALS_CASE = 0;
         Date currIndexEmployeeDate;
@@ -186,8 +198,9 @@ public class Company {
 
     /**
      * prints earnings statements only for employees in CS Department
+     * @return String containing all earnings statements for CS employees
      */
-    private String printCSDepartment(){
+    private String printCSDepartment() {
         String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[0])) {
@@ -199,8 +212,9 @@ public class Company {
 
     /**
      * prints earnings statements only for employees in ECE Department
+     * @return string containing earnings for ECE employees
      */
-    private String printECEDepartment(){
+    private String printECEDepartment() {
         String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[1])) {
@@ -212,8 +226,9 @@ public class Company {
 
     /**
      * prints earnings statements only for employees in IT Department
+     * @return string containing earnings for IT employees
      */
-    private String printITDepartment(){
+    private String printITDepartment() {
         String output = "";
         for (Employee employee : empList) {
             if (employee != null && employee.getProfile().getDepartment().equals(DEPARTMENT_CODES[2])) {
@@ -225,6 +240,7 @@ public class Company {
 
     /**
      * print earning statements for all employees
+     * @return string containing earnings for all employees
      */
     public String print() {
         String output = "";
@@ -238,6 +254,8 @@ public class Company {
 
     /**
      * prints earnings statements for all employees in order of hire date
+     *
+     * @return  string containing earnings for all employees sorted by date
      */
     public String printByDate() {
         sortByDate();
@@ -246,8 +264,44 @@ public class Company {
 
     /**
      * prints earning statements for all employees by order of department
+     * @return string containing earnings for all employees sorted by department
      */
     public String printByDepartment() {
         return printCSDepartment() + printECEDepartment() + printITDepartment();
     }
+
+    /**
+     * exports employee database to a file selected by user
+     * @return string message that indicates if data is empty, if file not selected or if database successfully exported
+     */
+    public String exportDatabase() {
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Open Target File for the Export");
+        chooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.txt"),
+                new FileChooser.ExtensionFilter("All Files", "*.*"));
+        Stage stage = new Stage();
+        try {
+            File targetFile = chooser.showSaveDialog(stage); //get the reference of the target file
+            //write code to write to the file.
+            if (targetFile == null) {
+                return IoFields.NULL_FILE_LOG;
+            }
+
+                FileWriter writer = new FileWriter(targetFile);
+                // loop through all people in company
+                if (isEmpty()) {
+                    return IoFields.EMPTY_DB_LOG;
+
+                }
+
+
+                writer.write(print());
+                writer.close();
+
+            } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        return IoFields.EXPORT_SUCCESS_LOG;
+    }
+
 }

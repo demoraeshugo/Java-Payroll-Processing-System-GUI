@@ -43,6 +43,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -59,7 +60,8 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" onAction="#importClick" text="Import" />
+                        <MenuItem mnemonicParsing="false" onAction="#exportClick" text="Export" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
@@ -108,7 +110,7 @@
       </HBox>
    </bottom>
    <center>
-      <TextArea fx:id="textArea" prefHeight="412.0" prefWidth="333.0" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="textArea" prefHeight="412.0" prefWidth="333.0" BorderPane.alignment="CENTER" disable = "true"/>
    </center>
    <right>
       <HBox prefHeight="412.0" prefWidth="470.0" style="-fx-background-color: rgb(233, 233, 233)rgb(233, 233, 233);" BorderPane.alignment="CENTER">
@@ -137,13 +139,16 @@
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="emptype" />
+                           </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="fulltime" layoutX="112.0" mnemonicParsing="false" onAction="#handleEmployeeType" text="Fulltime">
+                        <RadioButton fx:id="fulltime" layoutX="112.0" mnemonicParsing="false" onAction="#handleEmployeeType" text="Fulltime" toggleGroup="$emptype">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="management" layoutX="227.0" mnemonicParsing="false" onAction="#handleEmployeeType" text="Management">
+                        <RadioButton fx:id="management" layoutX="227.0" mnemonicParsing="false" onAction="#handleEmployeeType" text="Management" toggleGroup="$emptype">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
@@ -211,13 +216,16 @@
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="dpttype" />
+                           </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="ECE" layoutX="112.0" mnemonicParsing="false" onAction="#handleDepartmentCode" text="ECE">
+                        <RadioButton fx:id="ECE" layoutX="112.0" mnemonicParsing="false" onAction="#handleDepartmentCode" text="ECE" toggleGroup="$dpttype">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="IT" layoutX="227.0" mnemonicParsing="false" onAction="#handleDepartmentCode" text="IT">
+                        <RadioButton fx:id="IT" layoutX="227.0" mnemonicParsing="false" onAction="#handleDepartmentCode" text="IT" toggleGroup="$dpttype">
                            <padding>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </padding>
