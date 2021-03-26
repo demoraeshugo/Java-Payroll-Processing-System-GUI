@@ -4,6 +4,8 @@
 
 The purpose of this project was to build out a GUI using JavaFX for the backend we built in the previous assingment. For more details about the backend for this project please see -> <a href="https://github.com/demoraeshugo/Java-Payroll-Processing-System">Payroll Processing System<a/>
   
+### Final Grade: 48/50
+  
 ## Demo
 ![GUI view](https://raw.githubusercontent.com/demoraeshugo/Java-Payroll-Processing-System-GUI/main/resources/payroll-processing-gui-demo.gif)
 
