@@ -9,9 +9,9 @@ The purpose of this project was to build out a GUI using JavaFX for the backend 
 
 ## Documentation
 
-###Javadoc
+### Javadoc
 
 <a>Hosted on Github Pages</a> 🚀
 
-###Test Design
-![Test Design](https://raw.githubusercontent.com/demoraeshugo/Java-Payroll-Processing-System-GUI/main/resources/Testdesignproj3.pdf)
+### Test Design
+<a href="https://github.com/demoraeshugo/Java-Payroll-Processing-System-GUI/blob/main/resources/Testdesignproj3.pdf">Click Here<a/>
