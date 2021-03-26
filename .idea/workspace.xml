@@ -4,10 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="renamed /javadocs to /docs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testdesignproj3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Testdesignproj3.pdf" afterDir="false" />
-    </list>
+    <list default="true" id="f9c05780-9c8d-427d-b8aa-60f9aac44ae7" name="Default Changelist" comment="moved test design" />
     <list id="35bf2160-7b41-40d2-87a9-a361fac2210f" name="Changes by jonad" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +81,9 @@
       <recent name="C:\Users\jonad\Documents\ghubstuff\cs213Proj2\Java-Payroll-Processing-System\src\p2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/src/main/payroll_processing_system/model" />
-      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/main" />
     </key>
@@ -195,7 +192,7 @@
       <workItem from="1616722403605" duration="154000" />
       <workItem from="1616777282802" duration="611000" />
       <workItem from="1616783458744" duration="171000" />
-      <workItem from="1616783758925" duration="580000" />
+      <workItem from="1616783758925" duration="1082000" />
     </task>
     <task id="LOCAL-00001" summary="Added project framework">
       <created>1613420920316</created>
@@ -379,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616783822141</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="moved test design">
+      <created>1616784428417</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1616784428418</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,8 +403,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added project framework" />
-    <MESSAGE value="Added IO support and handlers" />
     <MESSAGE value="Added error handling for each type of employee in PayrollProcessing.java" />
     <MESSAGE value="Some more work" />
     <MESSAGE value="Out" />
@@ -424,7 +426,9 @@
     <MESSAGE value="Added managerGroup for radios, clean up" />
     <MESSAGE value="Deleted /test" />
     <MESSAGE value="renamed /javadocs to /docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed /javadocs to /docs" />
+    <MESSAGE value="added gif" />
+    <MESSAGE value="moved test design" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved test design" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"payroll_processing_system.application"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"payroll_processing_system.application"},{"l":"payroll_processing_system.view"}];updateSearchResults();
